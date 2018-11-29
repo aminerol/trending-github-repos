@@ -14,6 +14,7 @@
 		BA6EFAE821AFE04F00A12D4B /* GithubRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAE721AFE04F00A12D4B /* GithubRepos.swift */; };
 		BA6EFAEA21AFE12400A12D4B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAE921AFE12400A12D4B /* Item.swift */; };
 		BA6EFAEC21AFE22100A12D4B /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAEB21AFE22100A12D4B /* Owner.swift */; };
+		BA6EFAEF21AFE4B000A12D4B /* githubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAEE21AFE4B000A12D4B /* githubService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BA6EFAE721AFE04F00A12D4B /* GithubRepos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepos.swift; sourceTree = "<group>"; };
 		BA6EFAE921AFE12400A12D4B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BA6EFAEB21AFE22100A12D4B /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
+		BA6EFAEE21AFE4B000A12D4B /* githubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		BA6EFAD021AFD5AC00A12D4B /* githubrepos */ = {
 			isa = PBXGroup;
 			children = (
+				BA6EFAED21AFE38300A12D4B /* services */,
 				BA6EFAE621AFE01900A12D4B /* Models */,
 				BA6EFAE321AFDBCC00A12D4B /* Extensions */,
 				BA6EFAD121AFD5AC00A12D4B /* AppDelegate.swift */,
@@ -84,6 +87,14 @@
 				BA6EFAEB21AFE22100A12D4B /* Owner.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BA6EFAED21AFE38300A12D4B /* services */ = {
+			isa = PBXGroup;
+			children = (
+				BA6EFAEE21AFE4B000A12D4B /* githubService.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 				BA6EFAEA21AFE12400A12D4B /* Item.swift in Sources */,
 				BA6EFAEC21AFE22100A12D4B /* Owner.swift in Sources */,
 				BA6EFAE821AFE04F00A12D4B /* GithubRepos.swift in Sources */,
+				BA6EFAEF21AFE4B000A12D4B /* githubService.swift in Sources */,
 				BA6EFAE521AFDBED00A12D4B /* UIColor+Extension.swift in Sources */,
 				BA6EFAD421AFD5AC00A12D4B /* ViewController.swift in Sources */,
 				BA6EFAD221AFD5AC00A12D4B /* AppDelegate.swift in Sources */,
