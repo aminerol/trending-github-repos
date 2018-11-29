@@ -16,6 +16,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //creating the main window with hieght and width of the screen
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        //make this window visible and the main one
+        window?.makeKeyAndVisible()
+        
+        //init a layout where its gonna be the main layout and all views will live inside it
+        let layout = UICollectionViewFlowLayout()
+        // a navigation controller with the main layout as root
+        let navController = UINavigationController(rootViewController: ViewController(collectionViewLayout: layout))
+        
+        //set the root view controller of the main window with the nav controller created above
+        window?.rootViewController = navController
+        
+        // custimization for the navigation bar
+        UINavigationBar.appearance().barTintColor = UIColor.mainColor
+        UINavigationBar.appearance().shadowImage =  UIImage() // remove the shadow image by set to an empty UIimage
+        UINavigationBar.appearance().barStyle = .blackOpaque
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        application.statusBarStyle = .lightContent
+        
+        
         return true
     }
 

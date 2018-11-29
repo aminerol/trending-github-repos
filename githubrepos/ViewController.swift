@@ -8,11 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UICollectionViewController {
 
+    func setupNavBar(){
+        title = "Trending Repos"
+        navigationController?.navigationBar.tintColor = .mainColor
+        navigationController?.navigationBar.backgroundColor = .mainColor
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        navigationController?.navigationBar.isTranslucent = false
+        setupNavBar()
     }
 
     override func didReceiveMemoryWarning() {
