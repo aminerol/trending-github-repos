@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA4C23A421B12A4300A918CF /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C23A321B12A4300A918CF /* RepoCell.swift */; };
+		BA4C23A721B12BCA00A918CF /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C23A621B12BCA00A918CF /* UIImageView+Cache.swift */; };
 		BA6EFAD221AFD5AC00A12D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAD121AFD5AC00A12D4B /* AppDelegate.swift */; };
 		BA6EFAD421AFD5AC00A12D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAD321AFD5AC00A12D4B /* ViewController.swift */; };
 		BA6EFAD921AFD5B300A12D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6EFAD821AFD5B300A12D4B /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA4C23A321B12A4300A918CF /* RepoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoCell.swift; sourceTree = "<group>"; };
+		BA4C23A621B12BCA00A918CF /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		BA6EFACE21AFD5AC00A12D4B /* githubrepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubrepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6EFAD121AFD5AC00A12D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA6EFAD321AFD5AC00A12D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA4C23A221B12A2100A918CF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BA4C23A321B12A4300A918CF /* RepoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		BA6EFAC521AFD5AC00A12D4B = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +72,7 @@
 		BA6EFAD021AFD5AC00A12D4B /* githubrepos */ = {
 			isa = PBXGroup;
 			children = (
+				BA4C23A221B12A2100A918CF /* Views */,
 				BA6EFAED21AFE38300A12D4B /* services */,
 				BA6EFAE621AFE01900A12D4B /* Models */,
 				BA6EFAE321AFDBCC00A12D4B /* Extensions */,
@@ -75,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				BA6EFAE421AFDBED00A12D4B /* UIColor+Extension.swift */,
+				BA4C23A621B12BCA00A918CF /* UIImageView+Cache.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -173,6 +187,8 @@
 				BA6EFAE521AFDBED00A12D4B /* UIColor+Extension.swift in Sources */,
 				BA6EFAD421AFD5AC00A12D4B /* ViewController.swift in Sources */,
 				BA6EFAD221AFD5AC00A12D4B /* AppDelegate.swift in Sources */,
+				BA4C23A421B12A4300A918CF /* RepoCell.swift in Sources */,
+				BA4C23A721B12BCA00A918CF /* UIImageView+Cache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
