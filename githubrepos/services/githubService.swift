@@ -27,7 +27,7 @@ class githubService {
         
         guard let url = URL(string: "\(baseAPIEndppint)/search/repositories?q=created:%3E\(lastThirtyDays)&sort=stars&order=desc") else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, _, err) in
+        URLSession.shared.dataTask(with: url, completionHandler: { (data, _, err) in
             DispatchQueue.main.async {
                 if let err = err {
                     onFailure(err)
@@ -38,13 +38,12 @@ class githubService {
 
                 do {
                     let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
                     let repos = try decoder.decode(GithubRepos.self, from: data)
                     onSuccess(repos)
                 } catch let jsonErr {
                     onFailure(jsonErr)
                 }
             }
-        }
+        }).resume()
     }
 }

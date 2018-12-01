@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UICollectionViewController {
+class ViewController: UITableViewController {
 
     var repo: GithubRepos?
     
@@ -20,39 +20,40 @@ class ViewController: UICollectionViewController {
     
     }
     
-    func setupCollectionView(){
-        collectionView?.backgroundColor = .white
-        collectionView?.register(RepoCell.self, forCellWithReuseIdentifier: "cellId")
+    func setupTableView(){
+        tableView?.backgroundColor = .white
+        tableView?.register(RepoCell.self, forCellReuseIdentifier: "cellId")
+        tableView?.isPagingEnabled = true
     }
     
     func fetchRepos(){
         githubService.shared.getGithubRepos(onSuccess: { (repos: GithubRepos) in
             self.repo = repos
-            self.collectionView?.reloadData()
-        }) { (err) in
+            self.tableView?.reloadData()
+        }, onFailure: { (err) in
             print(err)
             let alert = UIAlertController(title: "Error", message: "Failed to get repos from api", preferredStyle: .alert)
             self.present(alert, animated: true, completion: nil)
-        }
+        })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupCollectionView()
+        setupTableView()
         setupNavBar()
         fetchRepos()
     }
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return repo?.items.count ?? 0
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath as IndexPath) as! RepoCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! RepoCell
         cell.item = repo?.items[indexPath.item]
         return cell
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

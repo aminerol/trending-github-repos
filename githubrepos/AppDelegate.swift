@@ -22,10 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //make this window visible and the main one
         window?.makeKeyAndVisible()
         
-        //init a layout where its gonna be the main layout and all views will live inside it
-        let layout = UICollectionViewFlowLayout()
         // a navigation controller with the main layout as root
-        let navController = UINavigationController(rootViewController: ViewController(collectionViewLayout: layout))
+        let navController = UINavigationController(rootViewController: ViewController())
         
         //set the root view controller of the main window with the nav controller created above
         window?.rootViewController = navController

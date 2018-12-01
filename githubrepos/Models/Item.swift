@@ -12,7 +12,7 @@ struct Item: Decodable {
     let id: Int
     let name: String
     let description: String
-    let stargazersCount: Int
+    let stargazersCount: Double
     let owner: Owner
     
     enum CodingKeys: String, CodingKey{
