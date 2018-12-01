@@ -23,10 +23,10 @@ class githubService {
         - parameter onSuccess: Completion handler called after successfully fetched the api
         - parameter onFailure: Completion handler called whene error occured on fetching api or decoding the json
     */
-    func getGithubRepos(String date, onSuccess: @escaping(GithubRepos) -> Void, onFailure: @escaping(Error) -> Void) {
+    func getGithubRepos(String date, Int page, onSuccess: @escaping(GithubRepos) -> Void, onFailure: @escaping(Error) -> Void) {
         
         //Construct the URL object with date param and using guard to check if the url is valid
-        guard let url = URL(string: "\(baseAPIEndppint)/search/repositories?q=created:%3E\(date)&sort=stars&order=desc") else { return }
+        guard let url = URL(string: "\(baseAPIEndppint)/search/repositories?q=created:%3E\(date)&sort=stars&order=desc&per_page=100&page=\(page)") else { return }
         
         // use URLSession to call the api with a task created to call it on background thread
         URLSession.shared.dataTask(with: url, completionHandler: { (data, _, err) in

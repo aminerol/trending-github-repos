@@ -41,7 +41,7 @@ class ReposViewController: UITableViewController {
         let lastThirtyDays = dateFormatter.string(from: date)
 
         //call the getGithubRepos to get the list of repos fom api
-        githubService.shared.getGithubRepos(lastThirtyDays, onSuccess: { (repos: GithubRepos) in
+        githubService.shared.getGithubRepos(lastThirtyDays, 1, onSuccess: { (repos: GithubRepos) in
             // in case the call was successfull asign the list returned to githubrepo object
             self.repo = repos
             self.tableView?.reloadData()
