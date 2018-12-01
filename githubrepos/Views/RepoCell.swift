@@ -10,6 +10,7 @@ import UIKit
 
 class RepoCell: UITableViewCell {
     
+    //the item that holds repo info
     var item: Item? {
         didSet{
             if let name = item?.name {
@@ -31,6 +32,7 @@ class RepoCell: UITableViewCell {
         }
     }
     
+    // the main container as stackview where we add subviews vertically
     let container: UIStackView = {
         let view = UIStackView()
         view.distribution = .fill
@@ -40,6 +42,7 @@ class RepoCell: UITableViewCell {
         return view
     }()
     
+    //label that show the repo name
     let nameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -49,6 +52,7 @@ class RepoCell: UITableViewCell {
         return label
     }()
     
+    //label that show the repo description
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -58,12 +62,14 @@ class RepoCell: UITableViewCell {
         return label
     }()
     
+    //container where we add the owner repo info
     let bottomontainer: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
+    //label that show the repo starts count
     let startsCountLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -72,6 +78,7 @@ class RepoCell: UITableViewCell {
         return label
     }()
     
+    //we use stackView here to align the imageview next to owner name
     let ownerStackview: UIStackView = {
         let view = UIStackView()
         view.distribution = .fill
@@ -81,6 +88,7 @@ class RepoCell: UITableViewCell {
         return view
     }()
     
+    //label that show the repo owner name
     let ownerNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -89,6 +97,7 @@ class RepoCell: UITableViewCell {
         return label
     }()
     
+    //imageview that load the owner's avatr from the web
     let avatarImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -106,34 +115,51 @@ class RepoCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
+    // func to call after init where we add all the views to the contentView and positionate using constraints
     func setupViews() {
         
+        //add main view to contentView
         addSubview(container)
+
+        //set a margin(top-right-bottom-left) using constraint
         container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24).isActive = true
         container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24).isActive = true
         container.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
         container.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
         
+        // add nameLabel to stackView
         container.addArrangedSubview(nameLabel)
+
+        // add descriptionLabel to stackView
         container.addArrangedSubview(descriptionLabel)
+
+        // add owner info container to stackView
         container.addArrangedSubview(bottomontainer)
         
+        // the stars count label the the owner info container
         bottomontainer.addSubview(startsCountLabel)
+
+        //anchor the stars count label to bottom left of the owner info container
         startsCountLabel.topAnchor.constraint(equalTo: bottomontainer.topAnchor).isActive = true
         startsCountLabel.trailingAnchor.constraint(equalTo: bottomontainer.trailingAnchor).isActive = true
         startsCountLabel.bottomAnchor.constraint(equalTo: bottomontainer.bottomAnchor).isActive = true
         
+        // add the owner stackView to owner bottom container
         bottomontainer.addSubview(ownerStackview)
+
+        //anchor the the owner stackview to bottom right of the owner container
         ownerStackview.topAnchor.constraint(equalTo: bottomontainer.topAnchor).isActive = true
         ownerStackview.leadingAnchor.constraint(equalTo: bottomontainer.leadingAnchor).isActive = true
         ownerStackview.bottomAnchor.constraint(equalTo: bottomontainer.bottomAnchor).isActive = true
         
+        //add the avatar imageview to owner stackview
         ownerStackview.addArrangedSubview(avatarImageView)
+
+        //set the width and height of the imageview
         avatarImageView.widthAnchor.constraint(equalToConstant: 26).isActive = true
         avatarImageView.heightAnchor.constraint(equalToConstant: 26).isActive = true
         
+        //add the ownername label to owner stackview
         ownerStackview.addArrangedSubview(ownerNameLabel)
     }
 }

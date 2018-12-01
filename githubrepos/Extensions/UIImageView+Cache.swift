@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-//https://gist.github.com/amosavian/a05044e57c290b5e064f4f7acfc3b506
+//source: https://gist.github.com/amosavian/a05044e57c290b5e064f4f7acfc3b506
 extension UIImageView {
     /// Loads image from web asynchronosly and caches it, in case you have to load url
     /// again, it will be loaded from cache if available
