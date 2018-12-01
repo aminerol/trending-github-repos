@@ -23,7 +23,7 @@ class githubService {
         - parameter onSuccess: Completion handler called after successfully fetched the api
         - parameter onFailure: Completion handler called whene error occured on fetching api or decoding the json
     */
-    func getGithubRepos(String date, Int page, onSuccess: @escaping(GithubRepos) -> Void, onFailure: @escaping(Error) -> Void) {
+    func getGithubRepos(date: String, page: Int, onSuccess: @escaping(GithubRepos) -> Void, onFailure: @escaping(Error) -> Void) {
         
         //Construct the URL object with date param and using guard to check if the url is valid
         guard let url = URL(string: "\(baseAPIEndppint)/search/repositories?q=created:%3E\(date)&sort=stars&order=desc&per_page=100&page=\(page)") else { return }
@@ -46,11 +46,11 @@ class githubService {
                     //decode the returned json using the GithubRepos Decodable
                     let decoder = JSONDecoder()
                     let repos = try decoder.decode(GithubRepos.self, from: data)
-
+                    
                     // call onSuccess to return the list of repos
                     onSuccess(repos)
                 } catch let jsonErr {
-                     call the onFailure to handle the error 
+                    //call the onFailure to handle the error
                     onFailure(jsonErr)
                 }
             }

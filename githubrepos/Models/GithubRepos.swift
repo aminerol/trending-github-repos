@@ -9,9 +9,9 @@
 import Foundation
 
 struct GithubRepos: Decodable {
-    let totalCount: Int
-    let incompleteResults: Bool
-    let items: [Item]
+    let totalCount: Int?
+    let incompleteResults: Bool?
+    var items: [Item]?
     
     enum CodingKeys: String, CodingKey{
         case totalCount = "total_count"

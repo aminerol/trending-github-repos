@@ -11,7 +11,7 @@ import Foundation
 struct Item: Decodable {
     let id: Int
     let name: String
-    let description: String
+    let description: String?
     let stargazersCount: Double
     let owner: Owner
     

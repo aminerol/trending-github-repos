@@ -10,8 +10,11 @@ import UIKit
 
 class ReposViewController: UITableViewController {
 
-    // githubrepo object that holds repos
-    var repo: GithubRepos?
+    // array of repo items
+    var repos = [Item]()
+    
+    // a pagenumber integer which will be incremente when reach bottom of the tableview
+    var pageNumber: Int = 1
     
     // func to customize the navigationbar
     func setupNavBar(){
@@ -30,7 +33,7 @@ class ReposViewController: UITableViewController {
     }
     
     // the func where we consuume our githubService
-    func fetchRepos(){
+    func fetchRepos(page: Int){
 
         // substract 30 day from today date
         guard let date = Calendar.current.date(byAdding: .day, value: -30, to: Date()) else {return}
@@ -41,10 +44,21 @@ class ReposViewController: UITableViewController {
         let lastThirtyDays = dateFormatter.string(from: date)
 
         //call the getGithubRepos to get the list of repos fom api
-        githubService.shared.getGithubRepos(lastThirtyDays, 1, onSuccess: { (repos: GithubRepos) in
-            // in case the call was successfull asign the list returned to githubrepo object
-            self.repo = repos
-            self.tableView?.reloadData()
+        githubService.shared.getGithubRepos(date: lastThirtyDays, page: pageNumber, onSuccess: { (results: GithubRepos) in
+            // in case the call was successfull append the items to our array of items
+            
+            // check if items not nil if so no more repos from api
+            if let items = results.items {
+                //increment page number after successfull api call
+                self.pageNumber += 1
+                
+                //append array of items  with recieved items from api
+                self.repos.append(contentsOf: items)
+                
+                //reload the tableview to render new cell with new items
+                self.tableView?.reloadData()
+            }
+            
         }, onFailure: { (err) in
             // in case any error print it also show to the user that there was an error
             // we could use a better logging
@@ -61,25 +75,38 @@ class ReposViewController: UITableViewController {
         // call the funcs to build the ui
         setupTableView()
         setupNavBar()
-        fetchRepos()
+        fetchRepos(page: pageNumber)
     }
 
-    // override constructor for setting number of rows od the tableview
+    //setting number of rows of the tableview
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // set the number of rows deponding of items count inside the githubrepo object else if githubrepo object is nil return 0
-        return repo?.items.count ?? 0
+        // set the number of rows deponding of items count
+        return repos.count
     }
     
-    // override constructor for for creating the cell
+    // creating the cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         //return a reusable uitableviewcell object of type Repo cell that is registred  for the tableview
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath) as! RepoCell
 
         // set the repo item to the cell item
-        cell.item = repo?.items[indexPath.item]
+        cell.item = repos[indexPath.item]
         
         return cell
+    }
+    
+    // the cell is about draw particular row
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // get last item index in the repos array
+        let lastItem = repos.count - 1
+        
+        //check if this cell is last one in the tableview
+        if  indexPath.row == lastItem {
+            
+            // call the fetchRepos with the incremented pagenumber
+            fetchRepos(page: pageNumber)
+        }
     }
     
 
