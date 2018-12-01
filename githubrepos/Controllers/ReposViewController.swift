@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ReposViewController: UITableViewController {
 
     var repo: GithubRepos?
     
     func setupNavBar(){
-        title = "Trending Repos"
+        navigationItem.title = "Trending Repos"
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = .mainColor
         navigationController?.navigationBar.backgroundColor = .mainColor

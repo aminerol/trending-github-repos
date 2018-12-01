@@ -10,7 +10,7 @@
 		BA4C23A421B12A4300A918CF /* RepoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C23A321B12A4300A918CF /* RepoCell.swift */; };
 		BA4C23A721B12BCA00A918CF /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C23A621B12BCA00A918CF /* UIImageView+Cache.swift */; };
 		BA6EFAD221AFD5AC00A12D4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAD121AFD5AC00A12D4B /* AppDelegate.swift */; };
-		BA6EFAD421AFD5AC00A12D4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAD321AFD5AC00A12D4B /* ViewController.swift */; };
+		BA6EFAD421AFD5AC00A12D4B /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAD321AFD5AC00A12D4B /* ReposViewController.swift */; };
 		BA6EFAD921AFD5B300A12D4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA6EFAD821AFD5B300A12D4B /* Assets.xcassets */; };
 		BA6EFAE521AFDBED00A12D4B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAE421AFDBED00A12D4B /* UIColor+Extension.swift */; };
 		BA6EFAE821AFE04F00A12D4B /* GithubRepos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAE721AFE04F00A12D4B /* GithubRepos.swift */; };
@@ -18,6 +18,8 @@
 		BA6EFAEC21AFE22100A12D4B /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAEB21AFE22100A12D4B /* Owner.swift */; };
 		BA6EFAEF21AFE4B000A12D4B /* githubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6EFAEE21AFE4B000A12D4B /* githubService.swift */; };
 		BA92467121B289C40000568F /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92467021B289C40000568F /* Double+Extension.swift */; };
+		BA92467621B2A9910000568F /* HomeTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92467521B2A9910000568F /* HomeTabController.swift */; };
+		BA92467821B2AD080000568F /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA92467721B2AD080000568F /* DummyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,7 @@
 		BA4C23A621B12BCA00A918CF /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		BA6EFACE21AFD5AC00A12D4B /* githubrepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = githubrepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6EFAD121AFD5AC00A12D4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BA6EFAD321AFD5AC00A12D4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BA6EFAD321AFD5AC00A12D4B /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
 		BA6EFAD821AFD5B300A12D4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA6EFADD21AFD5B300A12D4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6EFAE421AFDBED00A12D4B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		BA6EFAEB21AFE22100A12D4B /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		BA6EFAEE21AFE4B000A12D4B /* githubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubService.swift; sourceTree = "<group>"; };
 		BA92467021B289C40000568F /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		BA92467521B2A9910000568F /* HomeTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabController.swift; sourceTree = "<group>"; };
+		BA92467721B2AD080000568F /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +78,12 @@
 		BA6EFAD021AFD5AC00A12D4B /* githubrepos */ = {
 			isa = PBXGroup;
 			children = (
+				BA92467421B2A96C0000568F /* Controllers */,
 				BA4C23A221B12A2100A918CF /* Views */,
 				BA6EFAED21AFE38300A12D4B /* services */,
 				BA6EFAE621AFE01900A12D4B /* Models */,
 				BA6EFAE321AFDBCC00A12D4B /* Extensions */,
 				BA6EFAD121AFD5AC00A12D4B /* AppDelegate.swift */,
-				BA6EFAD321AFD5AC00A12D4B /* ViewController.swift */,
 				BA6EFAD821AFD5B300A12D4B /* Assets.xcassets */,
 				BA6EFADD21AFD5B300A12D4B /* Info.plist */,
 			);
@@ -112,6 +116,16 @@
 				BA6EFAEE21AFE4B000A12D4B /* githubService.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		BA92467421B2A96C0000568F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA92467521B2A9910000568F /* HomeTabController.swift */,
+				BA6EFAD321AFD5AC00A12D4B /* ReposViewController.swift */,
+				BA92467721B2AD080000568F /* DummyViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,10 +199,12 @@
 			files = (
 				BA6EFAEA21AFE12400A12D4B /* Item.swift in Sources */,
 				BA6EFAEC21AFE22100A12D4B /* Owner.swift in Sources */,
+				BA92467621B2A9910000568F /* HomeTabController.swift in Sources */,
 				BA6EFAE821AFE04F00A12D4B /* GithubRepos.swift in Sources */,
 				BA6EFAEF21AFE4B000A12D4B /* githubService.swift in Sources */,
 				BA6EFAE521AFDBED00A12D4B /* UIColor+Extension.swift in Sources */,
-				BA6EFAD421AFD5AC00A12D4B /* ViewController.swift in Sources */,
+				BA6EFAD421AFD5AC00A12D4B /* ReposViewController.swift in Sources */,
+				BA92467821B2AD080000568F /* DummyViewController.swift in Sources */,
 				BA6EFAD221AFD5AC00A12D4B /* AppDelegate.swift in Sources */,
 				BA4C23A421B12A4300A918CF /* RepoCell.swift in Sources */,
 				BA92467121B289C40000568F /* Double+Extension.swift in Sources */,

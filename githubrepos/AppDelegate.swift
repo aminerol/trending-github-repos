@@ -22,11 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //make this window visible and the main one
         window?.makeKeyAndVisible()
         
-        // a navigation controller with the main layout as root
-        let navController = UINavigationController(rootViewController: ViewController())
-        
-        //set the root view controller of the main window with the nav controller created above
-        window?.rootViewController = navController
+        //set the root view controller of the main window with the HomeTabController
+        window?.rootViewController = HomeTabController()
         
         // custimization for the navigation bar
         UINavigationBar.appearance().barTintColor = UIColor.mainColor
